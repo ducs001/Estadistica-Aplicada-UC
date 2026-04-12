@@ -34,14 +34,17 @@ library(plotly)
 library(palmerpenguins)
 library(gt)
 library(gtsummary)
+library(ggcorrplot)
+
 ```
+
 
 
 **Curso de Estadística Aplicada para la EAP de Ciencia de la Computación de la Univeridad Continental**
 
 ---
 
-# 📊 Regresión y Correlación
+# 📈 Regresión y Correlación
 
 - La regresión es uno de los conceptos más útiles en estadística porque implica la predicción numérica. La regresión predice algo que no sabemos, donde la respuesta es un número. A menudo recopilamos datos sobre cosas que son fáciles de medir y las llamamos variables independientes o explicativas. La regresión se utiliza para decirnos sobre las cosas que a menudo son difíciles de medir, denominadas variable dependiente o de respuesta.
 
@@ -89,7 +92,7 @@ cor.test(iris$Sepal.Length, iris$Sepal.Width)
 
 ---
 
-# 🔍 Tablas Interactivas {.tabset}
+# 🧮 Tablas Interactivas {.tabset}
 
 ## Modelo: `mpg ~ wt`
 
@@ -126,7 +129,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 
 
-# 💡 Palmer Penguins
+# 🐧 Palmer Penguins
 
 <center>
   <img src="https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/man/figures/lter_penguins.png" width="300" />
@@ -329,3 +332,20 @@ model_performance %>%
   kable_styling()
 ```
 Las métricas obtenidas muestran que el modelo de regresión lineal es estadísticamente sólido y confiable. El error estándar (295.56 gramos) es razonable dentro del rango de datos 
+
+# 🎯 Correlación
+
+- Los mapas de calor son una representación visual de datos donde los valores se representan usando colores. En el contexto de la correlación, los mapas de calor utilizan la intensidad del color para representar la fuerza de la correlación entre variables. Los colores más oscuros suelen indicar valores de correlación más altos, mientras que los colores más claros indican una correlación más baja o ninguna.
+
+```{r}
+cor_matrix <- cor(mtcars)
+corrplot(cor_matrix, method = "color")
+```
+
+
+# 🇵🇪 Datos Perú
+
+- [https://estadisticas.bcrp.gob.pe/estadisticas/series/](https://estadisticas.bcrp.gob.pe/estadisticas/series/)
+
+- [https://www.inei.gob.pe/estadisticas-indice-tematico/](https://www.inei.gob.pe/estadisticas-indice-tematico/)
+
